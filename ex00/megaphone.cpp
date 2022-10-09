@@ -6,13 +6,13 @@
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/28 18:07:19 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/09/28 18:18:17 by mikuiper      ########   odam.nl         */
+/*   Updated: 2022/09/28 18:23:53 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int			main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	if (argc < 2)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
