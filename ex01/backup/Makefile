@@ -6,12 +6,14 @@
 #    By: mikuiper <mikuiper@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/09/28 18:02:23 by mikuiper      #+#    #+#                  #
-#    Updated: 2022/10/09 22:35:53 by mikuiper      ########   odam.nl          #
+#    Updated: 2022/09/28 19:38:51 by mikuiper      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= 	phonebook
-SRC		=	main.cpp
+SRC		= 	phonebook.cpp \
+			add_contact.cpp \
+			search_contact.cpp
 OBJ		= 	$(SRC:.cpp=.o)
 CC		= 	clang++
 FLAGS	= 	-Wall -Wextra -Werror -std=c++98

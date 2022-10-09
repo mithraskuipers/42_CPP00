@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   phonebook.cpp                                      :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/09/28 18:52:21 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/09/28 19:37:13 by mikuiper      ########   odam.nl         */
+/*   Created: 2022/10/09 22:36:01 by mikuiper      #+#    #+#                 */
+/*   Updated: 2022/10/09 22:41:52 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <cctype>
 #include "phonebook.hpp"
+#include contacts[8];
 
 int	main(void)
 {
-	PhoneBook	phonebook;
+	std::string	input_line;
 
-	phonebook.index = 0;
-	phonebook.n_contacts = 0;
-	std::cout << "You have opened an old phonebook. Please enter ADD, SEARCH, or EXIT" << std::endl;
-	for (std::string cmd; std::getline(std::cin, cmd);)
+	cmd_code = 0;
+	while (1)
 	{
-		if (cmd == "ADD")
+		show_prompt(&input_line);
+		input_line.clear();
+		if (input_line == "EXIT")
 		{
-			add_contact(&phonebook);
+			return (0);
 		}
-		else if (cmd == "SEARCH")
+		if (input_line == "ADD")
 		{
-			search_contact(&phonebook);
+			if 
 		}
-		else if (cmd == "EXIT")
-		{
-			break;
-		}
-		std::cout << "Please enter ADD, SEARCH, or EXIT" << std::endl;
+		if 
 	}
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/28 18:51:32 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/09/28 19:40:04 by mikuiper      ########   odam.nl         */
+/*   Updated: 2022/10/09 22:31:34 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,13 @@ class Contact
 
 class PhoneBook
 {
-	public:
+	private:
 		int	index;
 		int	n_contacts;
 		Contact contacts[8];
+	public:
+		phonebook();
+		~phonebook();
 };
 
 void	add_contact(PhoneBook *phonebook);
