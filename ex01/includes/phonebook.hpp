@@ -5,41 +5,26 @@
 /*                                                     +:+                    */
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/09/28 18:51:32 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/10/10 09:42:45 by mikuiper      ########   odam.nl         */
+/*   Created: 2022/10/10 11:24:39 by mikuiper      #+#    #+#                 */
+/*   Updated: 2022/10/10 11:57:33 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <sstream>
-
-class Contact
-{
-	public:
-		std::string	FirstName;
-		std::string	LastName;
-		std::string	NickName;
-		std::string	PhoneNumber;
-		std::string	DarkestSecret;
-};
-
 class PhoneBook
 {
-	private:
-		int	index;
-		int	n_contacts;
-		Contact contacts[8];
 	public:
-		phonebook();
-		~phonebook();
+		PhoneBook(void) {};
+		~PhoneBook(void) {};
+		void	add_contact(void);
+		void	search_contact(void);
+		void	show_phonebook(void);
+		Contact	get_contact(int contact_nbr);
+	private:
+		Contact _contacts[8];
+		int		_nbr_of_contacts;
 };
-
-void	add_contact(PhoneBook *phonebook);
-void	search_contact(PhoneBook *phonebook);
 
 #endif

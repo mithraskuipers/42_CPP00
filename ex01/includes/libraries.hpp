@@ -1,39 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   libraries.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/09 22:36:01 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/10/09 22:41:52 by mikuiper      ########   odam.nl         */
+/*   Created: 2022/10/10 11:21:12 by mikuiper      #+#    #+#                 */
+/*   Updated: 2022/10/10 11:58:14 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
-#include <string>
-#include <cctype>
-#include "phonebook.hpp"
-#include contacts[8];
+#ifndef LIBRARIES_HPP
+# define LIBRARIES_HPP
 
-int	main(void)
-{
-	std::string	input_line;
+# include <iostream>
+# include <cstdlib>
+# include <string>
+# include <iomanip>
+# include <limits>
 
-	cmd_code = 0;
-	while (1)
-	{
-		show_prompt(&input_line);
-		input_line.clear();
-		if (input_line == "EXIT")
-		{
-			return (0);
-		}
-		if (input_line == "ADD")
-		{
-			if 
-		}
-		if 
-	}
-}
+#endif
