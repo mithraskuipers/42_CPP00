@@ -6,7 +6,7 @@
 #    By: mikuiper <mikuiper@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/10 11:59:53 by mikuiper      #+#    #+#                  #
-#    Updated: 2022/10/10 12:13:34 by mikuiper      ########   odam.nl          #
+#    Updated: 2022/10/11 11:42:50 by mikuiper      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,30 +38,30 @@ OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(YELLOW)Compiling [$(NAME)]...$(RESET)"
+	@echo "$(YELLOW)Compiling..[$(NAME)]...$(RESET)"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(GREEN)Finished [$(NAME)]$(RESET)"
+	@echo "$(GREEN)Finished![$(NAME)]$(RESET)"
 
 $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
 	@mkdir -p $(OBJ_DIR)
-	@echo "$(YELLOW)Compiling [$@]...$(RESET)"
+	@echo "$(YELLOW)Compiling [$@]..$(RESET)"
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
 	@printf "$(UP)$(CUT)"
-	@echo "$(GREEN)Finished [$@]$(RESET)"
+	@echo "$(GREEN)Finished![$@]$(RESET)"
 	@printf "$(UP)$(CUT)"
 
 clean:
 	@if [ -d "$(OBJ_DIR)" ]; then \
 	rm -rf $(OBJ_DIR); \
-	echo "$(BLUE)Deleting all objects from /01...$(RESET)"; else \
-	echo "No objects to remove from /01."; \
+	echo "$(BLUE)Deleting all object files..$(RESET)"; else \
+	echo "No object files to delete.."; \
 	fi;
 
 fclean: clean
 	@if [ -f "$(NAME)" ]; then \
 	rm -f $(NAME); \
-	echo "$(BLUE)Deleting $(NAME) from ex01...$(RESET)"; else \
-	echo "No Executable to remove from ex01."; \
+	echo "$(BLUE)Deleting $(NAME) executable..$(RESET)"; else \
+	echo "No executable to delete.."; \
 	fi;
 
 re: fclean all
