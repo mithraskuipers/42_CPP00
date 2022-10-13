@@ -6,14 +6,14 @@
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 08:35:06 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/10/13 10:39:03 by mikuiper      ########   odam.nl         */
+/*   Updated: 2022/10/13 17:30:41 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include "libraries.hpp"
+#include "Libraries.hpp"
 
 class Contact
 {

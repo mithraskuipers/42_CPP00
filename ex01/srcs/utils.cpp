@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   utils.cpp                                          :+:    :+:            */
+/*   Utils.cpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 14:41:26 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/10/13 15:24:15 by mikuiper      ########   odam.nl         */
+/*   Updated: 2022/10/13 17:30:14 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libraries.hpp"
+#include "../includes/Libraries.hpp"
 
 void	print_intro(void)
 {

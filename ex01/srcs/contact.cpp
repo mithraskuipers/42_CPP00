@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   contact.cpp                                        :+:    :+:            */
+/*   Contact.cpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 20:43:28 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/10/13 15:02:44 by mikuiper      ########   odam.nl         */
+/*   Updated: 2022/10/13 19:47:18 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/contact.hpp"
+#include "../includes/Contact.hpp"
 
 // Constructor
 Contact::Contact(void)
@@ -18,7 +18,7 @@ Contact::Contact(void)
 	return ;
 }
 
-// Deconstructor
+// Destructor
 Contact::~Contact(void)
 {
 	return ;

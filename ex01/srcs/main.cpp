@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 20:43:32 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/10/13 15:21:45 by mikuiper      ########   odam.nl         */
+/*   Updated: 2022/10/13 17:30:02 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/phonebook.hpp"
-#include "../includes/libraries.hpp"
-#include "../includes/prototypes.hpp"
+#include "../includes/PhoneBook.hpp"
+#include "../includes/Libraries.hpp"
+#include "../includes/Prototypes.hpp"
 
 int main(void)
 {

@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   phonebook.cpp                                      :+:    :+:            */
+/*   PhoneBook.cpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 20:43:36 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/10/13 15:03:12 by mikuiper      ########   odam.nl         */
+/*   Updated: 2022/10/13 21:14:56 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/phonebook.hpp"
-#include "../includes/libraries.hpp"
-#include "../includes/prototypes.hpp"
+#include "../includes/PhoneBook.hpp"
+#include "../includes/Libraries.hpp"
+#include "../includes/Prototypes.hpp"
 
 // Constructor
-PhoneBook::PhoneBook(void)
+PhoneBook::PhoneBook(void) : _n_contacts(-1)
 {
-	_n_contacts = -1;
-	return ;
 }
 
 // Deconstructor
 PhoneBook::~PhoneBook(void)
 {
-	return ;
 }
 
 void	PhoneBook::add_contact(void)
@@ -60,14 +57,30 @@ static void	print_colnames(void)
 	return ;
 }
 
-void	PhoneBook::search_contact(void)
+void	PhoneBook::search_print_contact(void)
 {
-	this->search_print_phonebook();
-	this->search_print_contact();
+	int			index;
+	std::string	input_line;
+	
+	while (true)
+	{
+		std::cout << "Please enter an index" << std::endl;
+		std::getline(std::cin, input_line);
+		if (input_line == "\0")
+			continue;
+		index = ft_atoi(input_line);
+		if ((index < 0) || (index > _n_contacts))
+			continue;
+		else
+			break;
+	}
+	_contacts[index].print_contact_all();
+	std::cout << std::endl;
+	
 	return ;
 }
 
-void	PhoneBook::search_print_phonebook(void)
+void	PhoneBook::search_contact(void)
 {
 	int	index;
 	std::string	input_line;
@@ -85,25 +98,6 @@ void	PhoneBook::search_print_phonebook(void)
 		index++;
 	}
 	std::cout << std::endl;
-	return ;
-}
-
-void	PhoneBook::search_print_contact(void)
-{
-	int			index;
-	std::string	input_line;
-	
-	while (true)
-	{
-		std::cout << "Please enter an index between 0 and " << _n_contacts << std::endl;
-		std::getline(std::cin, input_line);
-		index = ft_atoi(input_line);
-		if ((index < 0) || (index > _n_contacts))
-			continue;
-		else
-			break;
-	}
-	_contacts[index].print_contact_all();
-	std::cout << std::endl;
+	this->search_print_contact();
 	return ;
 }

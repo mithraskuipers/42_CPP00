@@ -6,7 +6,7 @@
 #    By: mikuiper <mikuiper@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/10 11:59:53 by mikuiper      #+#    #+#                  #
-#    Updated: 2022/10/13 15:20:25 by mikuiper      ########   odam.nl          #
+#    Updated: 2022/10/13 19:37:04 by mikuiper      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,29 +26,37 @@ RED			=	\033[31m
 # DIRECTORIES
 SRC_DIR		=	srcs/
 OBJ_DIR		=	objs/
-INC_DIR		=	includes/
+HDR_DIR		=	includes/
 
 # FILES
-SRC_FILES	=	main.cpp \
-				contact.cpp \
-				phonebook.cpp \
-				utils.cpp
+SRC_FILES	=	Main.cpp \
+				Contact.cpp \
+				PhoneBook.cpp \
+				Utils.cpp
+				
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
+
+HDR_FILES	=	Contact.hpp \
+				PhoneBook.hpp \
+				Prototypes.hpp \
+				Libraries.hpp
+
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
+HDR			=	$(addprefix $(HDR_DIR), $(HDR_FILES))
 
 # RULES
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HDR)
 	@echo "$(YELLOW)Compiling..[$(NAME)]$(RESET)"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 	@echo "$(GREEN)Finished compiling..$(NAME)$(RESET)"
 
-$(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
+$(OBJ_DIR)%.o:$(SRC_DIR)%.cpp $(HDR)
 	@mkdir -p $(OBJ_DIR)
 	@echo "$(YELLOW)Compiling..[$@]$(RESET)"
-	@$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
+	@$(CC) $(CFLAGS) -I $(HDR_DIR) -o $@ -c $<
 
 clean:
 	@if [ -d "$(OBJ_DIR)" ]; then \
@@ -61,7 +69,7 @@ fclean: clean
 	@if [ -f "$(NAME)" ]; then \
 	rm -f $(NAME); \
 	echo "$(RED)Deleting $(NAME)$(RESET)"; else \
-	echo "No executable to delete."; \
+	echo "$(RED)No executable to delete.$(RESET)"; \
 	fi;
 
 re: fclean all
