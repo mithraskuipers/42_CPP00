@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   phonebook.hpp                                      :+:    :+:            */
+/*   contact.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/13 08:34:53 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/10/13 15:20:42 by mikuiper      ########   odam.nl         */
+/*   Created: 2022/10/13 08:35:06 by mikuiper      #+#    #+#                 */
+/*   Updated: 2022/10/13 10:39:03 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-# define MAX_N_CONTACTS 8
-# include "contact.hpp"
+#include "libraries.hpp"
 
-class PhoneBook
+class Contact
 {
 	public:
-		PhoneBook();
-		~PhoneBook();
-		void	add_contact(void);
-		void	search_contact(void);
-		void	search_print_phonebook(void);
-		void	search_print_contact(void);
+		Contact();
+		~Contact();
+		void	input_contact(int index);
+		void	print_contact_preview(int max_chars);
+		void	print_contact_all(void);
+		void	update_index(int index);
 	private:
-		int		_n_contacts;
-		Contact	_contacts[MAX_N_CONTACTS];
+		int			_index;
+		std::string	_FirstName;
+		std::string	_LastName;
+		std::string	_NickName;
+		std::string	_PhoneNumber;
+		std::string	_DarkestSecret;
 };
 
 #endif

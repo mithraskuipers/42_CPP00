@@ -5,37 +5,62 @@
 #                                                      +:+                     #
 #    By: mikuiper <mikuiper@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2022/09/28 18:02:23 by mikuiper      #+#    #+#                  #
-#    Updated: 2022/09/28 18:15:34 by mikuiper      ########   odam.nl          #
+#    Created: 2022/10/10 11:59:53 by mikuiper      #+#    #+#                  #
+#    Updated: 2022/10/13 15:20:25 by mikuiper      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	megaphone
-SRC		= 	megaphone.cpp
-OBJ		= 	$(SRC:.cpp=.o)
-CC		= 	clang++
-FLAGS	= 	-Wall -Wextra -Werror -std=c++98
+# EXECUTABLE
+NAME		=	megaphone
 
+# CONFIGURATION
+CC			=	c++
+CFLAGS		=	-Wall -Werror -Wextra -std=c++98
+
+# COLOR CODES
+RESET		=	\033[0m
+GREEN		=	\033[32m
+YELLOW		=	\033[33m
+RED			=	\033[31m
+
+# DIRECTORIES
+SRC_DIR		=	srcs/
+OBJ_DIR		=	objs/
+INC_DIR		=	includes/
+
+# FILES
+SRC_FILES	=	megaphone.cpp
+OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
+SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
+
+# RULES
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "Compiling $(SRC)"
-	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-	@echo "Done!"
+	@echo "$(YELLOW)Compiling..[$(NAME)]$(RESET)"
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo "$(GREEN)Finished compiling..$(NAME)$(RESET)"
 
-%.o: %.cpp
-	@$(CC) $(FLAGS) -c $< -o $@
+$(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
+	@mkdir -p $(OBJ_DIR)
+	@echo "$(YELLOW)Compiling..[$@]$(RESET)"
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
 
 clean:
-	@echo "Running clean"
-	@rm -rf $(OBJ)
+	@if [ -d "$(OBJ_DIR)" ]; then \
+	rm -rf $(OBJ_DIR); \
+	echo "$(RED)Deleting all object files..$(RESET)"; else \
+	echo "No object files to delete.."; \
+	fi;
 
 fclean: clean
-	@echo "Running fclean"
-	@rm -rf $(NAME)
+	@if [ -f "$(NAME)" ]; then \
+	rm -f $(NAME); \
+	echo "$(RED)Deleting $(NAME)$(RESET)"; else \
+	echo "No executable to delete."; \
+	fi;
 
-re:
-	@$(MAKE) fclean
-	@$(MAKE) all
+re: fclean all
 
 .PHONY: all clean fclean re
