@@ -6,7 +6,7 @@
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 20:43:36 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/10/13 21:14:56 by mikuiper      ########   odam.nl         */
+/*   Updated: 2022/10/13 21:25:04 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	print_colnames(void)
 	return ;
 }
 
-void	PhoneBook::search_print_contact(void)
+void	PhoneBook::print_contact(void)
 {
 	int			index;
 	std::string	input_line;
@@ -98,6 +98,6 @@ void	PhoneBook::search_contact(void)
 		index++;
 	}
 	std::cout << std::endl;
-	this->search_print_contact();
+	this->print_contact();
 	return ;
 }
