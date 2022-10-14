@@ -6,7 +6,7 @@
 #    By: mikuiper <mikuiper@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/10 11:59:53 by mikuiper      #+#    #+#                  #
-#    Updated: 2022/10/13 19:37:04 by mikuiper      ########   odam.nl          #
+#    Updated: 2022/10/14 13:41:19 by mikuiper      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ OBJ_DIR		=	objs/
 HDR_DIR		=	includes/
 
 # FILES
-SRC_FILES	=	Main.cpp \
+SRC_FILES	=	main.cpp \
 				Contact.cpp \
 				PhoneBook.cpp \
 				Utils.cpp
