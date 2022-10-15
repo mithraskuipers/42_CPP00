@@ -6,7 +6,7 @@
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 20:43:36 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/10/13 21:25:04 by mikuiper      ########   odam.nl         */
+/*   Updated: 2022/10/15 12:12:39 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ PhoneBook::PhoneBook(void) : _n_contacts(-1)
 {
 }
 
-// Deconstructor
+// Destructor
 PhoneBook::~PhoneBook(void)
 {
 }
@@ -68,6 +68,8 @@ void	PhoneBook::print_contact(void)
 		std::getline(std::cin, input_line);
 		if (input_line == "\0")
 			continue;
+		if (!(ft_isdigit(input_line[0])))
+			continue;
 		index = ft_atoi(input_line);
 		if ((index < 0) || (index > _n_contacts))
 			continue;
@@ -83,7 +85,6 @@ void	PhoneBook::print_contact(void)
 void	PhoneBook::search_contact(void)
 {
 	int	index;
-	std::string	input_line;
 
 	if (_n_contacts == -1)
 	{

@@ -6,7 +6,7 @@
 /*   By: mikuiper <mikuiper@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 14:41:26 by mikuiper      #+#    #+#                 */
-/*   Updated: 2022/10/13 17:30:14 by mikuiper      ########   odam.nl         */
+/*   Updated: 2022/10/15 12:10:53 by mikuiper      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ void	print_outro(void)
 	std::cout << "\n\nThank you for using the phonebook program." << std::endl;
 	std::cout << "We take utmost care to ensure you are enjoying the phonebook program." << std::endl;
 	std::cout << "To leave customer feedback please reach out to mithraskuipers@gmail.com." << std::endl;
+}
+
+int	ft_isdigit(int c)
+{
+	return ((c >= '0') && (c <= '9'));
 }
 
 static int	ft_iswhitespace(int c)
